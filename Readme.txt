@@ -1,0 +1,1 @@
+A text based game project for practicing some Python.
