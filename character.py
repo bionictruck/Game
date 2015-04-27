@@ -10,20 +10,20 @@ def c_name():
         except:
             break
 
-def c_story():
-    while True:
-        try:
-            story = raw_input("Add a backstory 500 characters or less. Press Enter to skip: " "\n")
-            if len(story) < 500:
-                return 'Character Story: ' + story + "\n"
-            else:
-                print "Backstory is restricted to 500 characters"
-        except:
-            break
+# def c_story():
+#     while True:
+#         try:
+#             story = raw_input("Add a backstory 500 characters or less. Press Enter to skip: " "\n")
+#             if len(story) < 500:
+#                 return 'Character Story: ' + story + "\n"
+#             else:
+#                 print "Backstory is restricted to 500 characters"
+#         except:
+#             break
 
 def c_skills():
     restart = False
-    skill_points = 60
+    skill_points = 300
     c_skill = {'One-Hand' : 0, 'Two-Hand' : 0, 'Fisticuffs' : 0, 'Marksmanship' : 0, 'Stamina' : 0, 'Agility' : 0}
     for skill in c_skill:
             skill_entry = int(raw_input('How many points would you like to add to ' + skill + '? '))

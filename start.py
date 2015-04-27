@@ -1,4 +1,5 @@
-from character import c_name, c_story, c_skills
+import json
+from character import c_name, c_skills
 
 print 'Welcome to <The World>!'
 
@@ -7,8 +8,8 @@ while True:
         char_choice = raw_input("Would you like to (C)reate a new character or (L)oad an existing one? ").lower()
         if char_choice == 'c':
             cname = c_name()
-            cstory = c_story()
-            print 'You have 60 skills points available to customize your character.'
+            # cstory = c_story()
+            print 'You have 300 skill points available to customize your character.'
             print 'Points must be distributed between 6 skills.'
             print 'One-Hand - One handed weapons such as daggers and short swords'
             print 'Two-Hand - Two handed weapons such as long swords or sledge hammers'
@@ -23,6 +24,9 @@ while True:
     except:
         break
 
+char_info = [cname, cskill]
+json.dump(char_info, open("save.txt", 'w'))
+
+print char_info
 print cname
-print cstory
 print cskill
