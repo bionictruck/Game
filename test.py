@@ -14,5 +14,14 @@ def c_skills():
                 c_skill[skill] = skill_entry
                 skill_points = skill_points - skill_entry
                 print 'You have', skill_points, 'points left.'
+    save_c = raw_input('Would you like to save your character?').lower()
+    if save_c == 'y':
+        char_info = [cname, cskill]
+        json.dump(char_info, open("save.txt", 'w'))
+        print "Character saved!"
+    else:
+        restart = True
+        if restart == True:
+            c_skills()
 
 c_skills()

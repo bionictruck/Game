@@ -23,8 +23,8 @@ def c_name():
 
 def c_skills():
     restart = False
-    skill_points = 300
-    c_skill = {'One-Hand' : 0, 'Two-Hand' : 0, 'Fisticuffs' : 0, 'Marksmanship' : 0, 'Stamina' : 0, 'Agility' : 0}
+    skill_points = 40
+    c_skill = {'One-Hand' : 50, 'Two-Hand' : 50, 'Fisticuffs' : 50, 'Marksmanship' : 50, 'Stamina' : 50, 'Agility' : 50}
     for skill in c_skill:
             skill_entry = int(raw_input('How many points would you like to add to ' + skill + '? '))
             if skill_entry > skill_points:
@@ -34,7 +34,7 @@ def c_skills():
                 if restart == True:
                     c_skills()
             else:    
-                c_skill[skill] = skill_entry
+                c_skill[skill] = skill_entry + c_skill[skill]
                 skill_points = skill_points - skill_entry
                 print 'You have', skill_points, 'points left.'
     return c_skill
