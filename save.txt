@@ -1,1 +1,1 @@
-["Kevin", {"Agility": 56, "Two-Hand": 57, "Fisticuffs": 58, "Marksmanship": 59, "Stamina": 55, "One-Hand": 55}]
+["Lucy", {"Agility": 50, "Two-Hand": 55, "Fisticuffs": 56, "Marksmanship": 57, "Stamina": 58, "One-Hand": 64}]

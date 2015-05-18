@@ -1,14 +1,10 @@
 def c_name():
-    while True:
-        try:
-            c_name = raw_input("Enter a name: ")
-            if len(c_name) > 2:
-                print "Hello " + c_name + ", prepare for your adventure." + "\n"
-                return c_name
-            else:
-                print "Sorry the name must contain at least 3 characters"
-        except:
-            break
+    ### Create the character name. Must be greater than 2 characters
+        c_name = raw_input("Enter a name: ")
+        if len(c_name) > 2:
+            print "Hello " + c_name + ", prepare for your adventure." + "\n"
+            return c_name
+        print "Sorry the name must contain at least 3 characters"
 
 # def c_story():
 #     while True:
@@ -32,14 +28,26 @@ def c_skills():
     print 'Marksmanship - How well you shoot a gun or bow'
     print 'Agility - How quickly you can avoid getting hit'
     print 'Stamina - How many hit points you have'
+    ### For each skill in c_skills
     for skill in c_skill:
-            skill_entry = int(raw_input('How many points would you like to add to ' + skill + '? '))
+        ### Prompt the user for a value
+        skill_entry = raw_input('How many points would you like to add to ' + skill + '? ')
+        try:
+            #### Convert to a numeric value
+            skill_entry = int(skill_entry)
+            ### If the value entered is greater than the points left, restart the iteration
             if skill_entry > skill_points:
                 print "You don't have enough points!"
                 print "Let's try this again."
                 c_skills()
+            ### Otherwise add the value to the skill and subtract it from the number of points left
             else:    
                 c_skill[skill] = skill_entry + c_skill[skill]
                 skill_points = skill_points - skill_entry
                 print 'You have', skill_points, 'points left.'
+            ### If the value is not numeric, assign a value of 0 to that skill
+        except:
+            print 'Assiging a value of 0 to ' + skill + '.'
+            skill_entry = 0
     return c_skill
+
