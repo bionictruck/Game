@@ -25,6 +25,6 @@ while True:
         break
     ### If the value is not Y or N, prompt to create the character again
     print "Please create your character again."
-    c_name()
-    c_skills()
+    cname = c_name()
+    cskill = c_skills()
 

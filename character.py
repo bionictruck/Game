@@ -37,9 +37,9 @@ def c_skills():
             skill_entry = int(skill_entry)
             ### If the value entered is greater than the points left, restart the iteration
             if skill_entry > skill_points:
-                print "You don't have enough points!"
-                print "Let's try this again."
-                c_skills()
+                print 'You don''t have enough points!'
+                print 'Assiging a value of 0 to ' + skill + '.'
+                skill_entry = 0
             ### Otherwise add the value to the skill and subtract it from the number of points left
             else:    
                 c_skill[skill] = skill_entry + c_skill[skill]
